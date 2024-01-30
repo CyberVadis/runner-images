@@ -260,11 +260,11 @@ Describe "Heroku" {
     }
 }
 
-Describe "HHVM" -Skip:(Test-IsUbuntu22) {
-    It "hhvm" {
-        "hhvm --version" | Should -ReturnZeroExitCode
-    }
-}
+# Describe "HHVM" -Skip:(Test-IsUbuntu22) {
+#     It "hhvm" {
+#         "hhvm --version" | Should -ReturnZeroExitCode
+#     }
+# }
 
 Describe "Homebrew" {
     It "homebrew" {

@@ -123,10 +123,10 @@ function Get-HerokuVersion {
     return $herokuVersion
 }
 
-function Get-HHVMVersion {
-    $hhvmVersion = hhvm --version | Select-Object -First 1 | Take-OutputPart -Part 2
-    return $hhvmVersion
-}
+# function Get-HHVMVersion {
+#     $hhvmVersion = hhvm --version | Select-Object -First 1 | Take-OutputPart -Part 2
+#     return $hhvmVersion
+# }
 
 function Get-SVNVersion {
     $svnVersion = svn --version | Select-Object -First 1 | Take-OutputPart -Part 2
