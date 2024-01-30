@@ -71,23 +71,6 @@ function Get-ToolsetValue {
     return $jsonNode
 }
 
-function Get-AndroidPackages {
-    $packagesListFile = "/usr/local/lib/android/sdk/packages-list.txt"
-
-    if (-Not (Test-Path -Path $packagesListFile -PathType Leaf)) {
-        (/usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --list --verbose 2>&1) |
-        Where-Object { $_ -Match "^[^\s]" } |
-        Where-Object { $_ -NotMatch "^(Loading |Info: Parsing |---|\[=+|Installed |Available )" } |
-        Where-Object { $_ -NotMatch "^[^;]*$" } |
-        Out-File -FilePath $packagesListFile
-
-        Write-Host Android packages list:
-        Get-Content $packagesListFile
-    }
-
-    return Get-Content $packagesListFile
-}
-
 function Get-EnvironmentVariable($variable) {
     return [System.Environment]::GetEnvironmentVariable($variable)
 }
