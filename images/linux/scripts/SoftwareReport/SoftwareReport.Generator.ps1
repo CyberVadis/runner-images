@@ -117,9 +117,9 @@ $tools.AddToolVersion("Git LFS", $(Get-GitLFSVersion))
 $tools.AddToolVersion("Git-ftp", $(Get-GitFTPVersion))
 $tools.AddToolVersion("Haveged", $(Get-HavegedVersion))
 $tools.AddToolVersion("Heroku", $(Get-HerokuVersion))
-if (Test-IsUbuntu20) {
-    $tools.AddToolVersion("HHVM (HipHop VM)", $(Get-HHVMVersion))
-}
+# if (Test-IsUbuntu20) {
+#     $tools.AddToolVersion("HHVM (HipHop VM)", $(Get-HHVMVersion))
+# }
 $tools.AddToolVersion("jq", $(Get-JqVersion))
 $tools.AddToolVersion("Kind", $(Get-KindVersion))
 $tools.AddToolVersion("Kubectl", $(Get-KubectlVersion))
